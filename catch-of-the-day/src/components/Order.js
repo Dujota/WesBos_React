@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class Order extends Component {
+class Order extends Component {
   render() {
     return (
       <div>
