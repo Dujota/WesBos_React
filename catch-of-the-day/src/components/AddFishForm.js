@@ -10,6 +10,7 @@ export class AddFishForm extends Component {
   createFish = event => {
     //1 stop form from submitting
     event.preventDefault();
+    //2 grab all the data from the inputs and save it into an object
     const fish = {
       name: this.nameRef.value.value,
       price: parseFloat(this.priceRef.value.value),
@@ -17,9 +18,11 @@ export class AddFishForm extends Component {
       desc: this.descRef.value.value,
       image: this.imageRef.value.value
     };
-    console.log(fish);
+    //3 update state with our addFish method that is passed down from our App component
+    this.props.addFish(fish);
 
-    //2 grab all the data from the inputs
+    //4 refresh the form
+    event.currentTarget.reset();
   };
 
   render() {
